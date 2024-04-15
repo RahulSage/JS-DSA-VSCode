@@ -173,7 +173,7 @@ newList.push(84);
 newList.push(86);
 newList.push(88);
 
-//newList.traverse();
+newList.traverse();
 //newList.pop();
 //newList.pop();
 //newList.pop();
