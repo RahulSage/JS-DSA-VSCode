@@ -152,6 +152,24 @@ class Doubly_Linked_List {
         return nodeRemoved;
         
     }
+
+    reverse(llist){
+        // Write your code here
+    
+    let llistReverse = new Doubly_Linked_List();
+    let currentNode = llist;
+    
+    while(currentNode.next){
+        currentNode = currentNode.next;
+    }
+        console.log(currentNode);
+    while(currentNode){
+       llistReverse.push(currentNode.val); 
+       currentNode = currentNode.prev;
+    }
+    
+    return llistReverse;
+    }
 }
 
 var dList = new Doubly_Linked_List();
@@ -186,4 +204,8 @@ dList.print();
 
 console.log("Remove - ");
 dList.remove(5);
+dList.print();
+
+console.log("Reverse - ");
+dList.reverse();
 dList.print();
