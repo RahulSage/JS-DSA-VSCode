@@ -153,23 +153,24 @@ class Doubly_Linked_List {
         
     }
 
-    reverse(llist){
-        // Write your code here
     
-    let llistReverse = new Doubly_Linked_List();
-    let currentNode = llist;
+}
+
+function reverse(llist) {
+    // Write your code here
+    if(!llist) return llist;
+    let tempNode = llist;
+    let head = llist;
+    let tail = null;
     
-    while(currentNode.next){
-        currentNode = currentNode.next;
+    while(tempNode){
+        let next = tempNode.next;
+        tempNode.next = tempNode.prev;
+        tempNode.prev = next;
+        tail = tempNode;
+        tempNode = next;
     }
-        console.log(currentNode);
-    while(currentNode){
-       llistReverse.push(currentNode.val); 
-       currentNode = currentNode.prev;
-    }
-    
-    return llistReverse;
-    }
+    return tail;
 }
 
 var dList = new Doubly_Linked_List();
@@ -207,5 +208,5 @@ dList.remove(5);
 dList.print();
 
 console.log("Reverse - ");
-dList.reverse();
-dList.print();
+let revList = reverse(dList.head);
+//dList.print();
